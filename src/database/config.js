@@ -3,7 +3,8 @@ const mongoose = require('mongoose');
 const dbConnection = async()=> {
     try {
         //const connectionString = 'mongodb+srv://admin:ugM9ut24I5Pp9TYj@cluster0.acjl2it.mongodb.net/DBControlSoporte?retryWrites=true&w=majority';
-        const connectionString = 'mongodb+srv://diazleonel1998_db_user:bFckBPK92N6IE1Lg@app-ordenes.mxjrmas.mongodb.net/';
+        // const connectionString = 'mongodb+srv://diazleonel1998_db_user:bFckBPK92N6IE1Lg@app-ordenes.mxjrmas.mongodb.net/';
+        const connectionString = process.env.MONGODB_CNN;
 
         await mongoose.connect(connectionString, { useNewUrlParser: true, useUnifiedTopology: true });
 
